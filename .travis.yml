@@ -32,12 +32,6 @@ before_script:
 - cp ./hiddenapi/25/android.jar "$ANDROID_HOME/platforms/android-25/"
 after_script:
 - rm -rf ./app/google-services.json
-notifications:
-  email:
-    recipients:
-    - tornaco@163.com
-    on_success: always
-    on_failure: always
 before_install:
 - openssl aes-256-cbc -K $encrypted_9386c2da478c_key -iv $encrypted_9386c2da478c_iv
   -in keys_android.jks.enc -out keys/keys_android.jks -d
@@ -51,6 +45,6 @@ deploy:
   - x-apm-app/x-apm-app-release-aio.apk
   skip_cleanup: true
   on:
-    repo: Tornaco/X-APM
+    repo: gzsll/X-APM
     tags: true
     all_branches: true
